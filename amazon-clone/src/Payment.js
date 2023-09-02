@@ -33,7 +33,7 @@ function Payment() {
           
         
         const res = await fetch(
-            'https://challenge-811f2-default-rtdb.firebaseio.com/userDataRecords.json',
+            'https://challenge-811f2-default-rtdb.firebaseio.com/userDataRecords/Items.json',
             {
             method:"POST",
             headers: {

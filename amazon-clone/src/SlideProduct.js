@@ -24,7 +24,7 @@ function SlideProduct(props) {
         <h2>{props.name}</h2>
 
         <p className="price">₹{props.price}</p>
-        <p>{props.description}</p>
+        {/* <p>{props.description}</p> */}
 
         <p>
         <button onClick={addToBasket}>Add to Cart</button>

@@ -7,6 +7,7 @@ import { useStateValue } from "./StateProvider";
 import { auth } from './firebase'
 import { colors } from '@mui/material';
 import { productData, responsive } from "./data";
+import Contact from './Contact';
 
 function Header() {
     const [{ basket, user }, dispatch] = useStateValue();
@@ -34,15 +35,15 @@ function Header() {
                         className='header_searchInput'
                         type="text" name='search' onChange={(e) => SetsearchText(e.target.value)} />
                     {console.log(searchText)}
-                    <SearchIcon
-                        className='header__searchIcon' />
+                    {/* <SearchIcon
+                        className='header__searchIcon' /> */}
 
                 </div>
 
                 <div className="header__nav">
                     <Link to={!user && '/login'}>
                         <div onClick={handleAuthentication} className="header__option">
-                            <span className='header__optionLineOne'>Hello {!user ? 'Guest' : user.email}</span>
+                            <span className='header__optionLineOne' >Hello {!user ? 'Guest' : user.email}</span>
                             <span className='header__optionLineTwo'>{user ? 'Sign Out' : 'Sign In'}</span>
                         </div>
                     </Link>
@@ -55,6 +56,13 @@ function Header() {
                     <div className="header__option">
                         <span className='header__optionLineOne'>Your</span>
                         <Link to="https://www.primevideo.com/offers/nonprimehomepage/ref=dvm_pds_amz_in_as_s_gm_159_mkw_sRumWk2Nj-dc?gclid=CjwKCAjw2K6lBhBXEiwA5RjtCZqxLOkBpMfshUCDlvC9ZsDjbyNsTvk67ommQ12ntOtx9uxkyutL4RoCEEMQAvD_BwE&mrntrk=pcrid_657901934579_slid__pgrid_84577172328_pgeo_9300770_x__adext__ptid_kwd-303629226711"><span className='header__optionLineTwo' style={{ color: '#FFF' }}>Prime</span></Link>
+                    </div>
+
+                    <div className="header__option">
+                        <span className='header__optionLineOne'>Contact</span>
+                        <Link to='/contact'>
+                        <span className='header__optionLineTwo' style={{ color: '#FFF' }}>Us</span>
+                        </Link>
                     </div>
 
                     <Link to='/checkout'>

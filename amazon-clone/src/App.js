@@ -14,6 +14,8 @@ import Slide from './Slide';
 import Footer from './Footer';
 import { useState } from 'react';
 import { initialState } from './reducer';
+import Latest_Product from './Latest_Product';
+import Contact from './Contact';
 
 
 // const promise = loadStripe(
@@ -62,8 +64,9 @@ function App() {
         <Route path="/login" element={[<Login/>]} />
           <Route path="/checkout" element={[<Header />,<Checkout />]} />
           <Route path="/payment" element={[<Header />,<Payment/>]} />
+          <Route path="/contact" element={[<Contact/>]}/>
           {/* The Default Route should always be in bottom */}
-          <Route path="/" element={[<Header />,<Home />,<Slide/>]} />
+          <Route path="/" element={[<Header />,<Home />,<Slide/>,<Latest_Product/>]} />
         </Routes>
         <Footer/>
       </div>
